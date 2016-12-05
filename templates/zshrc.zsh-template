@@ -96,10 +96,12 @@ alias svnclean='svn revert * -R &&  svn cleanup --remove-unversioned'
 alias client_karaf="export karafhome=`ps -ef | grep karaf | grep -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'` && ${karafhome}/bin/client -u karaf"
 alias client_ruijie="export karafhome=`ps -ef | grep karaf | grep -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'` && ${karafhome}/bin/client -u ruijie"
 
-export JAVA_HOME=/usr/lib/jvm/java
+export JAVA_HOME=/root/Apps/jdk1.8.0_45
+#export JAVA_HOME=/usr/lib/jvm/java
 export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib:${CLASSPATH}
-export M2_HOME=/usr/lib/maven/maven
+export M2_HOME=/root/Apps/apache-maven-3.3.9
+#export M2_HOME=/usr/lib/maven/maven
 #export MAVEN_OPTS="$MAVEN_OPTS -Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"
 #export JVM_OPTS="-Xms256m  -XX:PermSize=256m -XX:MaxPermSize=512m"
 export PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin:${M2_HOME}/bin:$PATH
