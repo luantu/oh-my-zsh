@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git svn mvn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,3 +83,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias ll='ls -lA --group-directories-first'
+alias la='ls -A'
+alias l='ls -CF'
+alias projects='cd /home/wangxiaoyang/projects/'
+alias rgosm='cd /home/wangxiaoyang/projects/rgosm-build/'
+alias code='cd /home/wangxiaoyang/code/'
+alias grep='grep --color=auto --exclude-dir=\.svn --exclude-dir=\.git'
+alias mvnbuild='mvn clean install -DskipTests -Dcheckstyle.skip --errors'
+export JAVA_HOME=/usr/lib/jvm/java
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib:${CLASSPATH}
+export M2_HOME=/usr/lib/maven/maven
+#export MAVEN_OPTS="$MAVEN_OPTS -Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"
+#export JVM_OPTS="-Xms256m  -XX:PermSize=256m -XX:MaxPermSize=512m"
+export PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin:${M2_HOME}/bin:$PATH
+
+
