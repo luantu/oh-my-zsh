@@ -93,8 +93,9 @@ alias code='cd /home/wangxiaoyang/code/'
 alias grep='grep --color=auto --exclude-dir=\.svn --exclude-dir=\.git'
 alias mvnbuild='mvn clean install -DskipTests -Dcheckstyle.skip --errors'
 alias svnclean='svn revert * -R &&  svn cleanup --remove-unversioned'
-alias client_karaf="`ps -ef | grep karaf | grep -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u karaf"
-alias client_ruijie="`ps -ef | grep karaf | grep -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u ruijie"
+alias client_karaf="`ps -ef | grep  --color=auto karaf | grep  --color=auto -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u karaf"
+alias client_ruijie="`ps -ef | grep  --color=auto karaf | grep  --color=auto -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u ruijie"
+alias pskaraf="ps -ef | grep --color=auto karaf | grep -v  --color=auto client |  grep --color=auto -v grep"
 
 export JAVA_HOME=/root/Apps/jdk1.8.0_45
 #export JAVA_HOME=/usr/lib/jvm/java
