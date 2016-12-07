@@ -93,9 +93,13 @@ alias code='cd /home/wangxiaoyang/code/'
 alias grep='grep --color=auto --exclude-dir=\.svn --exclude-dir=\.git'
 alias mvnbuild='mvn clean install -DskipTests -Dcheckstyle.skip --errors'
 alias svnclean='svn revert * -R &&  svn cleanup --remove-unversioned'
-alias client_karaf="`ps -ef | grep  --color=auto karaf | grep  --color=auto -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u karaf"
-alias client_ruijie="`ps -ef | grep  --color=auto karaf | grep  --color=auto -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u ruijie"
+#alias client_karaf="`ps -ef | grep  --color=auto karaf | grep  --color=auto -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u karaf"
+#alias client_ruijie="`ps -ef | grep  --color=auto karaf | grep  --color=auto -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u ruijie"
 alias pskaraf="ps -ef | grep --color=auto karaf | grep -v  --color=auto client |  grep --color=auto -v grep"
+alias odltest="cd /root/odl_test"
+alias distribution="cd /root/odl_test/distribution"
+alias dc_distribution="cd /root/odl_test/distribution-dc"
+alias campus_distribution="cd /root/odl_test/distribution-campus"
 
 export JAVA_HOME=/root/Apps/jdk1.8.0_45
 #export JAVA_HOME=/usr/lib/jvm/java
@@ -107,4 +111,10 @@ export M2_HOME=/root/Apps/apache-maven-3.3.9
 #export JVM_OPTS="-Xms256m  -XX:PermSize=256m -XX:MaxPermSize=512m"
 export PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin:${M2_HOME}/bin:$PATH
 
-
+client() {
+    KARAFHOME=`ps -ef | grep  --color=auto karaf | grep -v client | grep  --color=auto -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`
+    #echo $KARAFHOME
+    if [ -d "$KARAFHOME" ]; then
+        $KARAFHOME/bin/client -u $1
+    fi
+}
