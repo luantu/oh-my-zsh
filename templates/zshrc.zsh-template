@@ -100,8 +100,8 @@ alias odltest="cd /root/odl_test"
 alias distribution="cd /root/odl_test/distribution"
 alias dc_distribution="cd /root/odl_test/distribution-dc"
 alias campus_distribution="cd /root/odl_test/distribution-campus"
-alias web-deploy="/root/.oh-my-zsh/web-deploy.sh"
-alias rg-deploy="/root/.oh-my-zsh/rg-deploy.sh"
+alias webdeploy="/root/.oh-my-zsh/web-deploy.sh"
+alias rgdeploy="/root/.oh-my-zsh/rg-deploy.sh"
 alias killkaraf="ps -ef | grep karaf | grep -v client | grep -v grep && export karafpid=`ps -ef | grep karaf | grep -v client| grep -v grep | awk '{print $2}'` && [ -n "$karafpid" ] && kill -9 ${karafpid} && sleep 5 &&  ps -ef | grep karaf | grep -v grep"
 export JAVA_HOME=/root/Apps/jdk1.8.0_45
 #export JAVA_HOME=/usr/lib/jvm/java
