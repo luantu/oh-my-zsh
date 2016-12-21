@@ -121,3 +121,6 @@ client() {
     fi
 }
 
+TZ='Asia/Shanghai'; 
+export TZ
+
