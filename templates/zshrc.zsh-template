@@ -91,7 +91,7 @@ alias projects='cd /home/wangxiaoyang/projects/'
 alias rgosm='cd /home/wangxiaoyang/projects/rgosm-build/'
 alias code='cd /home/wangxiaoyang/code/'
 alias grep='grep --color=auto --exclude-dir=\.svn --exclude-dir=\.git'
-alias mvnbuild='mvn clean install -DskipTests -Dcheckstyle.skip --errors'
+alias mvnbuild='mvn clean install -DskipTests -Dcheckstyle.skip --errors -Dadditionalparam=-Xdoclint:none  -Dmaven.javadoc.skip=true '
 alias svnclean='svn revert * -R &&  svn cleanup --remove-unversioned'
 #alias client_karaf="`ps -ef | grep  --color=auto karaf | grep  --color=auto -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u karaf"
 #alias client_ruijie="`ps -ef | grep  --color=auto karaf | grep  --color=auto -v grep | awk -F ' ' '{for(i=2;i<=NF;++i)printf $i"\n"}' | grep "karaf.home" | awk -F '=' '{print $2}'`/bin/client -u ruijie"
