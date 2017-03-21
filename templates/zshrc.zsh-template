@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ll='ls -lA --group-directories-first'
+alias ll='ls -lAh --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
 alias projects='cd /home/wangxiaoyang/projects/'
