@@ -1,7 +1,7 @@
 #!/bin/bash
 #file_name: rg-deploy.sh
 
-UPGRADE_PACKAGE="/root/odl_test/RG-ONC_2.1.0-Web.tar.gz"
+UPGRADE_PACKAGE="/root/odl_test/RG-ONC_2.2.0-Web.tar.gz"
 
 export depoly_ip=`echo  $SSH_CONNECTION | awk '{print $3}'` 
 
@@ -23,7 +23,7 @@ fi
 #    cd /root/odl_test/ && wget ${weburl}
 #fi
 
-WEB_URL=`cat /root/rgonc_web_version`
+WEB_URL=`cat /root/rgonc_2.2_web_version`
 cd /root/odl_test/ && wget ${WEB_URL}
 
 # upgrade
