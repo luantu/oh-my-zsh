@@ -10,7 +10,7 @@ echo "[${timestamp}] get version $1" >> getversion.log
 
 REMOTE_URL=http://192.168.5.14/ngcf/output/sdn/SDN_NFV_onc_trunk_code/
 wget -q ${REMOTE_URL} -O /tmp/$1
-REMOTE_DIR=`cat /tmp/$1 | grep "$1" | head -n 1 | awk -F 'href' '{print $2}' | awk -F '"' '{print $2}'`
+REMOTE_DIR=`cat /tmp/$1 | grep "$1_[0-9]" | head -n 1 | awk -F 'href' '{print $2}' | awk -F '"' '{print $2}'`
 REMOTE_URL=${REMOTE_URL}${REMOTE_DIR}
 wget -q ${REMOTE_URL} -O /tmp/$1
 
